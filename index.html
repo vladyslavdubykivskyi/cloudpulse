@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CloudPulse — Infrastructure Status &amp; Real-Time Telemetry</title>
+  <meta name="description" content="Real-time cloud infrastructure status dashboard, 30-day service uptime history, SLA specifications, and custom incident alert subscriptions.">
+
+  <!-- Іконка вкладки браузера (Favicon) -->
+  <link rel="icon" href="assets/icons/logo.svg" type="image/svg+xml">
+
+  <!-- Open Graph для красивого прев'ю посилання у месенджерах -->
+  <meta property="og:title" content="CloudPulse — Infrastructure Status">
+  <meta property="og:description" content="Live operational metrics, 99.99% SLA specifications, and automated incident alerts.">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="style.css">
+  <!-- Підключення шрифту Inter з Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Посилання швидкого доступу з клавіатури (Модуль 06) -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Секція 1: Фіксована шапка з адаптивним меню (Модулі 02-03) -->
+  <header class="header">
+    <div class="container header__container">
+      <a href="#" class="logo">
+        <img src="assets/icons/logo.svg" alt="CloudPulse Logo" class="logo__icon">
+        <span class="logo__text">CloudPulse</span>
+      </a>
+
+      <!-- Прихований чекбокс тригер для бургер меню -->
+      <input type="checkbox" id="burger-toggle" class="burger-toggle" aria-label="Toggle navigation menu">
+
+      <!-- Іконка гамбургер (3 смужки) -->
+      <label for="burger-toggle" class="burger-btn">
+        <span class="burger-btn__line"></span>
+        <span class="burger-btn__line"></span>
+        <span class="burger-btn__line"></span>
+      </label>
+
+      <!-- Меню, що розгортається на смартфонах -->
+      <div class="header__menu">
+        <nav class="nav" aria-label="Primary navigation">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="#status" class="nav__link">Overview</a></li>
+            <li class="nav__item"><a href="#metrics" class="nav__link">Metrics</a></li>
+            <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
+            <li class="nav__item"><a href="#pricing" class="nav__link">Pricing</a></li>
+            <li class="nav__item"><a href="#history" class="nav__link">History</a></li>
+            <li class="nav__item"><a href="#sla-contact" class="nav__link">SLA &amp; Alerts</a></li>
+          </ul>
+        </nav>
+
+        <a href="#sla-contact" class="btn btn--primary">
+          <img src="assets/icons/bell.svg" alt="" class="btn__icon">
+          <span>Subscribe to updates</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main container" id="main-content">
+
+    <!-- Банер головного операційного статусу (Каскадна анімація появи Модуля 07) -->
+    <section class="status-banner" id="status">
+      <div class="status-banner__meta">
+        <span class="status-banner__tag">LIVE INFRASTRUCTURE STATUS</span>
+        <span class="status-banner__time">Updated 2 minutes ago</span>
+      </div>
+      <div class="status-banner__title-wrapper">
+        <span class="status-dot status-dot--operational" aria-hidden="true"></span>
+        <h1 class="status-banner__title">All Systems Operational</h1>
+      </div>
+    </section>
+
+    <!-- Секція 2: Ключові метрики системи -->
+    <section class="section" id="metrics">
+      <div class="section__header">
+        <h2 class="section__title">System health</h2>
+        <span class="section__subtitle">REAL-TIME OVERVIEW</span>
+      </div>
+      <p class="section__desc">Infrastructure performance at a glance.</p>
+
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <span class="metric-card__label">Global Uptime</span>
+          <div class="metric-card__value">99.98%</div>
+          <span class="metric-card__note">Last 90 days</span>
+        </div>
+
+        <div class="metric-card">
+          <span class="metric-card__label">API Response Time</span>
+          <div class="metric-card__value">118 <span class="metric-card__unit">ms</span></div>
+          <span class="metric-card__note">Average</span>
+        </div>
+
+        <div class="metric-card">
+          <span class="metric-card__label">Active Incidents</span>
+          <div class="metric-card__value">0</div>
+        </div>
+
+        <div class="metric-card">
+          <span class="metric-card__label">Total Monitored Nodes</span>
+          <div class="metric-card__value">24</div>
+          <span class="metric-card__status">24 Online</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Секція 3: Сервіси та смужки доступності -->
+    <section class="section" id="services">
+      <div class="section__header">
+        <h2 class="section__title">Core services &amp; components</h2>
+        <span class="section__subtitle">30-DAY UPTIME</span>
+      </div>
+      <p class="section__desc">Current component status and 30-day history.</p>
+
+      <div class="services-grid">
+        <!-- Сервіс 1 -->
+        <article class="service-card">
+          <div class="service-card__top">
+            <h3 class="service-card__name">Public REST API Gateway</h3>
+            <span class="badge badge--operational">Operational</span>
+          </div>
+          <div class="uptime-bar">
+            <div class="uptime-bars">
+              <span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span>
+            </div>
+            <div class="uptime-bar__labels">
+              <span>30 days ago</span>
+              <span>Today</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Сервіс 2 -->
+        <article class="service-card">
+          <div class="service-card__top">
+            <h3 class="service-card__name">Authentication &amp; OAuth 2.0</h3>
+            <span class="badge badge--operational">Operational</span>
+          </div>
+          <div class="uptime-bar">
+            <div class="uptime-bars">
+              <span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span>
+            </div>
+            <div class="uptime-bar__labels">
+              <span>30 days ago</span>
+              <span>Today</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Сервіс 3 -->
+        <article class="service-card">
+          <div class="service-card__top">
+            <h3 class="service-card__name">Primary PostgreSQL Database</h3>
+            <span class="badge badge--operational">Operational</span>
+          </div>
+          <div class="uptime-bar">
+            <div class="uptime-bars">
+              <span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span>
+            </div>
+            <div class="uptime-bar__labels">
+              <span>30 days ago</span>
+              <span>Today</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Сервіс 4 -->
+        <article class="service-card">
+          <div class="service-card__top">
+            <h3 class="service-card__name">Redis Cache Cluster</h3>
+            <span class="badge badge--operational">Operational</span>
+          </div>
+          <div class="uptime-bar">
+            <div class="uptime-bars">
+              <span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span>
+            </div>
+            <div class="uptime-bar__labels">
+              <span>30 days ago</span>
+              <span>Today</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Сервіс 5 -->
+        <article class="service-card">
+          <div class="service-card__top">
+            <h3 class="service-card__name">Payment Webhooks &amp; Billing</h3>
+            <span class="badge badge--degraded">Degraded Performance</span>
+          </div>
+          <div class="uptime-bar">
+            <div class="uptime-bars">
+              <span class="bar bar--operational"></span>
+              <span class="bar bar--degraded"></span>
+              <span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span>
+              <span class="bar bar--degraded"></span>
+              <span class="bar bar--degraded"></span>
+            </div>
+            <div class="uptime-bar__labels">
+              <span>30 days ago</span>
+              <span>Today</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Сервіс 6 -->
+        <article class="service-card">
+          <div class="service-card__top">
+            <h3 class="service-card__name">Edge CDN &amp; Static Asset Delivery</h3>
+            <span class="badge badge--operational">Operational</span>
+          </div>
+          <div class="uptime-bar">
+            <div class="uptime-bars">
+              <span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span><span class="bar bar--operational"></span>
+            </div>
+            <div class="uptime-bar__labels">
+              <span>30 days ago</span>
+              <span>Today</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Легенда статусів -->
+      <div class="legend">
+        <span class="legend__item"><span class="legend__dot legend__dot--operational"></span> Operational</span>
+        <span class="legend__item"><span class="legend__dot legend__dot--degraded"></span> Degraded</span>
+        <span class="legend__item"><span class="legend__dot legend__dot--outage"></span> Outage</span>
+      </div>
+    </section>
+
+    <!-- Секція 4: Тарифні плани підписки (Модуль 06: UI компонент блоку цін) -->
+    <section class="section" id="pricing">
+      <div class="section__header">
+        <h2 class="section__title">Monitoring plans</h2>
+        <span class="section__subtitle">SUBSCRIPTION TIERS</span>
+      </div>
+      <p class="section__desc">Select the checking frequency and alerting channels that match your scale.</p>
+
+      <div class="pricing-grid">
+        <!-- Тариф 1: Developer -->
+        <article class="pricing-card">
+          <div class="pricing-card__header">
+            <h3 class="pricing-card__title">Developer</h3>
+            <p class="pricing-card__desc">For personal projects and staging environments.</p>
+            <div class="pricing-card__price">
+              <span class="pricing-card__amount">$0</span>
+              <span class="pricing-card__period">/ month</span>
+            </div>
+          </div>
+          <ul class="pricing-card__features">
+            <li>✔ 3-minute check intervals</li>
+            <li>✔ Up to 10 monitored endpoints</li>
+            <li>✔ Email notifications</li>
+            <li>✔ 30-day metrics retention</li>
+          </ul>
+          <a href="#sla-contact" class="btn btn--secondary pricing-card__btn">Start Free</a>
+        </article>
+
+        <!-- Тариф 2: Pro Team (Виділений пакет) -->
+        <article class="pricing-card pricing-card--featured">
+          <span class="pricing-card__badge">MOST POPULAR</span>
+          <div class="pricing-card__header">
+            <h3 class="pricing-card__title">Pro Team</h3>
+            <p class="pricing-card__desc">For fast-growing production applications.</p>
+            <div class="pricing-card__price">
+              <span class="pricing-card__amount">$29</span>
+              <span class="pricing-card__period">/ month</span>
+            </div>
+          </div>
+          <ul class="pricing-card__features">
+            <li>✔ 30-second check intervals</li>
+            <li>✔ Up to 50 monitored endpoints</li>
+            <li>✔ SMS, Slack &amp; Telegram alerts</li>
+            <li>✔ 90-day latency analytics</li>
+            <li>✔ Custom status page domain</li>
+          </ul>
+          <a href="#sla-contact" class="btn btn--primary pricing-card__btn">Upgrade to Pro</a>
+        </article>
+
+        <!-- Тариф 3: Enterprise -->
+        <article class="pricing-card">
+          <div class="pricing-card__header">
+            <h3 class="pricing-card__title">Enterprise</h3>
+            <p class="pricing-card__desc">For mission-critical multi-region architectures.</p>
+            <div class="pricing-card__price">
+              <span class="pricing-card__amount">$199</span>
+              <span class="pricing-card__period">/ month</span>
+            </div>
+          </div>
+          <ul class="pricing-card__features">
+            <li>✔ 10-second check intervals</li>
+            <li>✔ Unlimited endpoints &amp; nodes</li>
+            <li>✔ Automated webhook escalations</li>
+            <li>✔ 99.99% guaranteed SLA</li>
+            <li>✔ Dedicated Site Reliability Engineer</li>
+          </ul>
+          <a href="#sla-contact" class="btn btn--secondary pricing-card__btn">Contact Sales</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Секція 5: Історія інцидентів -->
+    <section class="section" id="history">
+      <div class="section__header">
+        <h2 class="section__title">Past incidents &amp; maintenance</h2>
+        <span class="section__subtitle">INCIDENT HISTORY</span>
+      </div>
+      <p class="section__desc">Recent events and resolution updates.</p>
+
+      <article class="incident-card">
+        <div class="incident-card__header">
+          <h3 class="incident-card__title">Database Connection Pool Latency Degradation — May 12, 2026</h3>
+          <span class="badge badge--resolved">Resolved</span>
+        </div>
+
+        <ul class="timeline">
+          <li class="timeline__item">
+            <span class="timeline__bullet timeline__bullet--success"></span>
+            <span class="timeline__time">14:35 UTC</span>
+            <div class="timeline__content">
+              <strong>Resolved:</strong> Fix deployed, connection pool returned to baseline latency.
+            </div>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__bullet"></span>
+            <span class="timeline__time">14:15 UTC</span>
+            <div class="timeline__content">
+              <strong>Monitoring:</strong> Database failover completed successfully.
+            </div>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__bullet"></span>
+            <span class="timeline__time">13:50 UTC</span>
+            <div class="timeline__content">
+              <strong>Identified:</strong> Elevated latency caused by slow replica sync.
+            </div>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__bullet"></span>
+            <span class="timeline__time">13:30 UTC</span>
+            <div class="timeline__content">
+              <strong>Investigating:</strong> Investigating reports of intermittent 504 errors on API endpoints.
+            </div>
+          </li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- МОДУЛЬ 04: Мультимедійні секції -->
+
+    <!-- Медіа секція 1: Фонове зображення із затемненням -->
+    <section class="media-banner media-banner--photo" id="enterprise">
+      <div class="media-banner__content">
+        <span class="media-banner__tag">ENTERPRISE SLA</span>
+        <h2 class="media-banner__title">Guaranteed 99.99% Uptime for Mission-Critical Apps</h2>
+        <p class="media-banner__desc">
+          Deploy your workloads across globally distributed low-latency clusters with automated failover and 24/7 dedicated engineering support.
+        </p>
+        <a href="#pricing" class="btn btn--primary">Get Enterprise Access</a>
+      </div>
+    </section>
+
+    <!-- Медіа секція 2: Фонове зациклене відео з постером -->
+    <section class="media-banner media-banner--video">
+      <video class="media-banner__video" autoplay muted loop playsinline poster="assets/images/video-poster.webp" aria-hidden="true">
+        <source src="assets/video/telemetry-loop.mp4" type="video/mp4">
+      </video>
+
+      <div class="media-banner__overlay"></div>
+
+      <div class="media-banner__content media-banner__content--video">
+        <span class="media-banner__tag">REAL-TIME TELEMETRY</span>
+        <h2 class="media-banner__title">Worldwide Continuous Node Observability</h2>
+        <p class="media-banner__desc">
+          Synthetic probes monitor response times and packet loss from 42 edge regions every 10 seconds.
+        </p>
+        <a href="#metrics" class="btn btn--ghost">View Global Metrics</a>
+      </div>
+    </section>
+
+    <!-- МОДУЛЬ 05: Адаптивна таблиця SLA та форма підписки без JavaScript -->
+    <section class="section" id="sla-contact">
+      <div class="section__header">
+        <h2 class="section__title">SLA Specifications &amp; Incident Alerts</h2>
+        <span class="section__subtitle">SERVICE LEVEL &amp; SUBSCRIPTION</span>
+      </div>
+      <p class="section__desc">Guaranteed response times and custom alert subscription settings.</p>
+
+      <!-- Семантична адаптивна таблиця -->
+      <div class="table-wrap">
+        <table class="data-table">
+          <caption class="data-table__caption">
+            Guaranteed uptime and response time metrics by service tier (Updated November 2026)
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Infrastructure Component</th>
+              <th scope="col">Target Uptime</th>
+              <th scope="col">Max Latency</th>
+              <th scope="col">Incident Response</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Public REST API Gateway</th>
+              <td>99.99%</td>
+              <td>120 ms</td>
+              <td>&lt; 15 min</td>
+            </tr>
+            <tr>
+              <th scope="row">Authentication &amp; OAuth 2.0</th>
+              <td>99.99%</td>
+              <td>95 ms</td>
+              <td>&lt; 15 min</td>
+            </tr>
+            <tr>
+              <th scope="row">Primary PostgreSQL Cluster</th>
+              <td>99.95%</td>
+              <td>45 ms</td>
+              <td>&lt; 30 min</td>
+            </tr>
+            <tr>
+              <th scope="row">Payment Webhooks &amp; Billing</th>
+              <td>99.90%</td>
+              <td>250 ms</td>
+              <td>&lt; 1 hour</td>
+            </tr>
+            <tr>
+              <th scope="row">Edge CDN &amp; Static Delivery</th>
+              <td>99.99%</td>
+              <td>35 ms</td>
+              <td>&lt; 15 min</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Форма зворотного зв'язку та підписки (нативна валідація без JS) -->
+      <form class="contact-form" action="#" method="post">
+        <h3 class="contact-form__title">Subscribe to Custom Incident Alerts</h3>
+        <p class="contact-form__desc">
+          Receive instant notifications when specific infrastructure nodes experience latency or maintenance.
+        </p>
+
+        <fieldset class="form__group">
+          <legend class="form__legend">Engineer &amp; Organization Details</legend>
+
+          <div class="form__row">
+            <div class="form__control">
+              <label class="form__label" for="user-name">Full Name *</label>
+              <input
+                class="form__field"
+                type="text"
+                id="user-name"
+                name="user_name"
+                placeholder="Name and Surname"
+                minlength="2"
+                required
+              >
+            </div>
+
+            <div class="form__control">
+              <label class="form__label" for="user-email">Work Email *</label>
+              <input
+                class="form__field"
+                type="email"
+                id="user-email"
+                name="user_email"
+                placeholder="devops@company.com"
+                required
+              >
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="form__control">
+              <label class="form__label" for="user-phone">Emergency SMS Phone *</label>
+              <input
+                class="form__field"
+                type="tel"
+                id="user-phone"
+                name="user_phone"
+                placeholder="+380971234567"
+                pattern="^\+?[0-9\s\-\(\)]{10,18}$"
+                required
+              >
+            </div>
+
+            <div class="form__control">
+              <label class="form__label" for="service-select">Monitored Component</label>
+              <select class="form__field" id="service-select" name="component">
+                <option value="all">All Infrastructure Services</option>
+                <option value="api">Public REST API Gateway</option>
+                <option value="db">Primary PostgreSQL Database</option>
+                <option value="webhooks">Payment Webhooks &amp; Billing</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="form__group">
+          <legend class="form__legend">Preferred Alert Channel</legend>
+          <div class="form__radio-group">
+            <label class="form__choice">
+              <input type="radio" name="channel" value="email" checked>
+              <span>Email Digest</span>
+            </label>
+            <label class="form__choice">
+              <input type="radio" name="channel" value="webhook">
+              <span>Slack / Webhook</span>
+            </label>
+            <label class="form__choice">
+              <input type="radio" name="channel" value="sms">
+              <span>Critical SMS</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="form__control">
+          <label class="form__label" for="user-notes">Custom Webhook URL or Incident Notes</label>
+          <textarea
+            class="form__field form__textarea"
+            id="user-notes"
+            name="notes"
+            rows="3"
+            placeholder="Optional: specify webhook endpoint or SLA escalation rules..."
+          ></textarea>
+        </div>
+
+        <label class="form__choice form__consent">
+          <input type="checkbox" name="terms" required>
+          <span>I agree to receive automated system status notifications according to the Privacy Policy *</span>
+        </label>
+
+        <button class="btn btn--primary form__submit" type="submit">
+          Activate Monitoring Alerts
+        </button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Секція 6: Підвал сайту -->
+  <footer class="footer" id="support">
+    <div class="container footer__container">
+      <div class="footer__left">
+        <ul class="footer__links">
+          <li><a href="#sla-contact" class="footer__link">API Documentation</a></li>
+          <li><a href="#enterprise" class="footer__link">Security Center</a></li>
+          <li><a href="#history" class="footer__link">RSS Feed</a></li>
+          <li><a href="#sla-contact" class="footer__link">Privacy Policy</a></li>
+        </ul>
+        <p class="footer__copyright">© 2026 CloudPulse Infrastructure Inc.</p>
+      </div>
+
+      <div class="footer__right">
+        <span class="footer__timezone">🌐 All times reported in UTC+2</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
